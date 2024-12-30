@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./Components/Navbar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import About from "./Pages/About";
 import Algorithms from "./Pages/Algorithms";
 import Home from "./Pages/Home";
@@ -8,16 +8,17 @@ import Home from "./Pages/Home";
 function App() {
   return (
     <>
-      <Navbar />;
-      <BrowserRouter>
+      <Navbar />
+      <HashRouter>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/algorithms" element={<Algorithms />} />
-          <Route path="/algorithms/:type" element={<Algorithms />} />
+          <Route path="home" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="algorithms" element={<Algorithms />} />
+          <Route path="algorithms/:type" element={<Algorithms />} />
+          <Route path="*" element={<div>Page Not Found</div>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

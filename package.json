@@ -1,7 +1,8 @@
 {
+  "homepage": "https://snimale.github.io/algos",
   "name": "learning",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^19.0.0",
@@ -10,6 +11,8 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
