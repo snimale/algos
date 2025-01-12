@@ -5,7 +5,7 @@ import AlgorithmList from "../Components/AlgorithmList";
 
 const algorithmComponents = { billsplit: BillSplit };
 
-export default function Algorithms(params) {
+export default function Algorithms() {
   const { type } = useParams();
   const AlgorithmComponent = algorithmComponents[type];
 

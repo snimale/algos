@@ -23,7 +23,7 @@ export default function BillSplit() {
         <BillSplitParticipants />
       </BillSplitParticipantsContext.Provider>
 
-      <BillSplitBillsContext.Provider value={{ bills, setBills }}>
+      <BillSplitBillsContext.Provider value={{ bills, setBills, participants }}>
         <BillSplitBills />
       </BillSplitBillsContext.Provider>
 

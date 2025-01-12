@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <Navbar />
+
       <HashRouter>
         <Routes>
           <Route index element={<Home />} />

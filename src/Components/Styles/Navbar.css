@@ -1,0 +1,13 @@
+.nav-link {
+  text-align: center;
+  color: grey;
+}
+
+.nav-link.active {
+  color: black;
+  font-weight: 500;
+}
+
+.nav-item {
+  width: 120px;
+}

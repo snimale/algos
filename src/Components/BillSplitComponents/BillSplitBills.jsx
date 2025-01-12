@@ -10,13 +10,19 @@ export default function BillSplitBills() {
   const amountInputRef = useRef(null);
   const noteInputRef = useRef(null);
 
-  const { bills, setBills } = useContext(BillSplitBillsContext);
+  const { bills, setBills, participants } = useContext(BillSplitBillsContext);
   const billComponents = [];
   for (let i = 0; i < bills.length; i++) {
     billComponents.push(
       <BillSplitBillContext.Provider key={i} value={{ bills, setBills, i }}>
         <BillSplitBill />
       </BillSplitBillContext.Provider>
+    );
+  }
+  const inputParticipantsDropdown = [];
+  for (let i = 0; i < participants.length; i++) {
+    inputParticipantsDropdown.push(
+      <option value={participants[i]}>{participants[i]}</option>
     );
   }
 
@@ -27,8 +33,21 @@ export default function BillSplitBills() {
       {billComponents}
 
       <div>
-        <input placeholder="Spent By" ref={senderInputRef} />
-        <input placeholder="Recieved By" ref={recieverInputRef} />
+        <select ref={senderInputRef} defaultValue={""}>
+          <option value="" disabled hidden>
+            Select Sender
+          </option>
+          {inputParticipantsDropdown}
+        </select>
+
+        <select ref={recieverInputRef} defaultValue={""}>
+          <option value="" disabled hidden>
+            Select Reciever
+          </option>
+          {inputParticipantsDropdown}
+          <option value="all">All</option>
+        </select>
+
         <input placeholder="0" type="number" ref={amountInputRef} />
         <input placeholder="Note" ref={noteInputRef} defaultValue={""} />
 

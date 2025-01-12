@@ -1,1 +1,5 @@
 https://rumkin.com/tools/cipher/dancing-men/
+
+random matrix generator
+- given n, m
+- given n, m, rank
